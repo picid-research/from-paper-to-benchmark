@@ -1,0 +1,34 @@
+# Hyperparameter profile metadata for /validate-paper.
+#
+# The validate-paper tooling enforces the fixed validation datamodule batch
+# sizes train=512, val=1024, test=1024 for every validation profile. The primary
+# reference profile also preserves scheduler/checkpoint cadence, while
+# model-specific HPs come from the paper or explicit framework/default
+# imputations in the generated experiment config.
+# Stable keyed entries may still live here when an official benchmark profile is
+# available, and the experimenter may pass them to /check-batch-fit and
+# /run-training as explicit hp_overrides.
+#
+# This file is only a keyed override source for stable reference entries. Do not
+# add global batch/LR defaults here; the fixed validation batch is enforced by
+# `.opencode/tools/PICID_training.py` and mirrored in the agent/skill specs.
+
+profiles:
+  reference:
+    description: Primary validation profile; uses keyed official non-batch overrides when available, otherwise uses the composed experiment config for scheduler cadence and paper/imputed model HPs. Tooling always appends train/val/test batch sizes 512/1024/1024.
+    primary: true
+    required_runtime_resolution: false
+    resolution_sources:
+      - scripts/paper_prognostics/*.sh
+      - scripts/paper_diagnostics/*.sh
+      - report_output/**/tables/hp_configs/*.nc
+      - report_output/**/tables/hp_impact/*.csv
+    by_experiment: {}
+    by_scope_model: {}
+    by_scope: {}
+    by_dataset: {}
+  paper:
+    description: Paper/default non-batch profile generated into the experiment config; tooling still appends train/val/test batch sizes 512/1024/1024 for validation.
+    primary: false
+    overrides: {}
+    scheduler_policy: use_composed_experiment_config

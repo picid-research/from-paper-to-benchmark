@@ -1,0 +1,44 @@
+# dataset_map.yaml
+# Maps (dataset key, task_type[, subtask]) -> report_output/<folder_name>.
+# The PICID_baselines tool consults this file before falling back to glob
+# matching. Folder naming in report_output/ is not deterministic enough to
+# rely on glob alone (concepts_n_cmapss has 3 variants; hsf15 has 4 subtask
+# folders). Add new entries here whenever a new report_output folder appears.
+#
+# Schema:
+#   <dataset_key>:
+#     <task_type>: <folder_name>           # single-folder case
+#   <dataset_key>:
+#     <task_type>:
+#       <subtask>: <folder_name>           # multi-subtask case; 'default' is used when
+#       default:  <folder_name>            # the caller does not pass a subtask
+
+nb14:
+  prognostics: 16_03_2026_nb14_prognostics_combined
+
+unibo:
+  prognostics: 16_03_2026_unibo_prognostics_combined
+
+xjtu_sy:
+  prognostics: 16_03_2026_xjtu_sy_prognostics_combined
+
+phme20:
+  prognostics: 16_03_2026_phme20_prognostics_raw
+
+mzvav:
+  diagnostics: 16_03_2026_mzvav_diagnostics_
+
+hsf15:
+  diagnostics:
+    pump: 16_03_2026_hsf15_pump_diagnostics_
+    cooler: 16_03_2026_hsf15_cooler_diagnostics_
+    valve: 16_03_2026_hsf15_valve_diagnostics_
+    accumulator: 16_03_2026_hsf15_accumulator_diagnostics_
+
+concepts_n_cmapss:
+  prognostics:
+    default: 16_03_2026_concepts_n_cmapss_prognostics_
+    ds02: 16_03_2026_concepts_n_cmapss_ds02_prognostics_
+  diagnostics:
+    default: 16_03_2026_concepts_n_cmapss_multi_diagnostics_
+    multi: 16_03_2026_concepts_n_cmapss_multi_diagnostics_
