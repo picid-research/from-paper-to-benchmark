@@ -2,7 +2,7 @@ Non-Commercial License Agreement
 
 The identity and address of the Licensor have been anonymized for review purposes and will be disclosed in the final license agreement.
 
-This license is a legally binding agreement between [Institution] (“the Licensor”) and licensee end user (“the Licensee”) setting forth the terms and conditions governing the use and operation of [Institution]’s proprietary computer software products called “XXX” available under this GitHub repository (the “Program”). By downloading and installing, copying or otherwise using the Program, and/or otherwise accepting this License, the Licensee agrees to be bound by the terms and conditions of this License. If the Licensee does not agree to or accept the terms of this Agreement, the Licensee may not access or use the Program.
+This license is a legally binding agreement between [Institution] (“the Licensor”) and licensee end user (“the Licensee”) setting forth the terms and conditions governing the use and operation of [Institution]’s proprietary computer software products called "from-paper-to-benchmark" available under this GitHub repository (the “Program”). By downloading and installing, copying or otherwise using the Program, and/or otherwise accepting this License, the Licensee agrees to be bound by the terms and conditions of this License. If the Licensee does not agree to or accept the terms of this Agreement, the Licensee may not access or use the Program.
 	
 The Licensee will access to the source code or a compiled version of the Program, under the following conditions (hereafter: the “Agreement”):
 
